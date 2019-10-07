@@ -1,0 +1,50 @@
+Henoune
+
+exercice 1 :
+
+R4 : Le version de Maven installée sur la machine est : Maven 3.6.0
+
+R5 :  Le groupId est l'identifiant du groupe, à l'origine du projet et artifactld infique un nom unique utilisé pour nommer les artifacts à construire
+
+R6 : ce répertoire contient  classes  generated-sources  maven-status
+
+R8 : l'argument -cp  permet de spécifier un class path, la class path est une liste d'emplacements ou java v	 chercher pour trouvé les bits d'un code compilé 
+
+R13 : la valeur qu'on doit lui donner est 1.7
+
+exercice 2 :
+
+R2 : la commande ne s'execute pas, car le fichier jar n'est pas encore Manifest 
+
+Exercice 3 :
+
+
+Exercice 4 :
+
+3.
+public class PrimeCollection 
+{
+    bool isPrime(int n) {
+    	if(n<1) 
+    		return false;
+    	for(int i=2;i<Math.sqrt(h);i++) {
+    		if(n%i==0) {
+    			return false;
+    		}
+    	}
+    	return true;
+    }
+}
+
+
+
+TD 2
+
+EXO 1 :
+
+R 2 : les fichiers qui peuvent être déplacé vers git sont 
+pom.xml, PrimeCollection.java, AppTest.java
+
+R5 : on voit les messages qu'on a rajouter en vert avec +nmbr de mots,  et les messages qui sont enevé en -nbr de  mots
+
+EXO 3 :
