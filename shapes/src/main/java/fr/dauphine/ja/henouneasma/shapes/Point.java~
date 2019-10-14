@@ -3,7 +3,7 @@ package fr.dauphine.ja.henouneasma.shapes.shapes;
 import java.util.*;
 
 
-public class Point extends Ligne {
+public class Point {
 		
 		private int x,y; // champs privé  
 	    private static  int nbPoints; // ce champs n'interfére pas à la création d'un point 
