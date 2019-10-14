@@ -1,11 +1,11 @@
-package fr.dauphine.ja.henouneasma.shapes.shapes;
+package fr.dauphine.ja.henouneasma.shapes;
 
 import java.util.*;
 
 
-public class Point extends Ligne {
+public class Point {
 		
-		private int x,y; // champs privé  
+	    private int x,y; // champs privé  
 	    private static  int nbPoints; // ce champs n'interfére pas à la création d'un point 
 	    private int maxPoints; //nombres de points pour une ligne brisé 
 	    
@@ -91,7 +91,7 @@ public class Point extends Ligne {
 	    	Point p11=new Point(1,2);
 	    	Point p22=p11;
 	    	Point p33=new Point(1,2);
-	    	ArrayList<Point> list = new ArrayList<>();
+	    	ArrayList<Point> list = new ArrayList<Point>();
 	    	list.add(p11);
 	    	System.out.println(list.indexOf(p22));
 	    	System.out.println(list.indexOf(p33));   	
