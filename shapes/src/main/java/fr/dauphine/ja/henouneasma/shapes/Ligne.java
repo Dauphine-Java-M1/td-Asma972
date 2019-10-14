@@ -10,12 +10,14 @@ public class Ligne {
         private static int n=0;
 
         public Ligne(int maxPoints){
-              tableau = new Point[maxPoints] ;
+        	LinkedList <Point> list = new LinkedList<Point>() ; 
+             // tableau = new Point[maxPoints] ;
                             
         }     
         
         public void add(Point p) {
-        	
+
+        	Objects.requireNonNull(p,"Le point ne peut pas etre null");
         	if(n<=maxPoints) {
 	        	tableau[n]= new Point(p);
 	        	n++;
@@ -31,7 +33,7 @@ public class Ligne {
         }
         
         public boolean contains (Point p) {
-        	
+        	Objects.requireNonNull(p,"Le point ne peut pas etre null");
         	for (Point p2 : tableau) 
         		if(p.equals(p2)) return true; 
         	return false;
@@ -43,8 +45,8 @@ public class Ligne {
 	    	// exercice 2.3
 	    	Point p1=new Point(1,2);
 	    	Ligne l = new Ligne(2);
-	    	l.add(p1);
-	    	System.out.println(l.contains(null));   	
+	    	l.add(p1);	  
+	    	System.out.println(l.contains(p1));   	
 	    }
 
 }

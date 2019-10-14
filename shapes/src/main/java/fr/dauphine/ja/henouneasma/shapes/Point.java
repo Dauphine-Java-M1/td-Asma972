@@ -65,6 +65,20 @@ public class Point {
 			Point p = (Point) o;
 			return (x==p.x)&&(y==p.y);		
 		}
+		// signature 1 ou on modifie les paramétre du point
+		
+		public void translate (int dx, int dy ) {
+			this.x = dx;
+			this.y = dy;
+		}
+		
+		// signature 2 ou on créé un nouveau point
+		public Point translate2(int dx,int dy) {
+			Point p = new Point(dx, dy);
+			return p;
+		}
+		
+		
 		
 		// main 
 	    public static void main( String[] args )
