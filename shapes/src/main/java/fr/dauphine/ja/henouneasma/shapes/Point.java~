@@ -78,10 +78,7 @@ public class Point {
 			return p;
 		}
 		
-		@Override 
-		public String toString() {
-			return "("+x+","+y+")";
-		}
+		
 		
 		// main 
 	    public static void main( String[] args )
@@ -112,7 +109,6 @@ public class Point {
 	    	list.add(p11);
 	    	System.out.println(list.indexOf(p22));
 	    	System.out.println(list.indexOf(p33));   	
-	    	p11.toString();
 	   
 	    }
 
