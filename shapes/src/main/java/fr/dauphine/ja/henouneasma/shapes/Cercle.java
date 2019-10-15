@@ -3,6 +3,7 @@ package fr.dauphine.ja.henouneasma.shapes;
 public class Cercle {
 	private int rayon;
 	private Point centre;
+	private static double pi=3.14;
 	
 	public Cercle(int rayon, Point p) {
 		this.rayon = rayon; //Rayon du cercle
@@ -21,13 +22,13 @@ public class Cercle {
 	//redéfinition de la méthode toString
 	
 	public String toString() {
-		String res = " rayon= " +this.rayon+" le centre : ("+centre.getX()+","+centre.getY()+")";
+		String res = " rayon= " +this.rayon+" le centre : ("+centre.getX()+","+centre.getY()+") et sa surface est :"+this.surface() ;
 		return res;
 	}
 	// translater un cerlce
 	public void translate(int dx,int dy) {
 		this.centre.translate(dx,dy);
-		this.rayon=0;
+		this.rayon=0;// pour le moment je ne sais pas comment faire ça 
 		
 	}
 	
@@ -38,6 +39,22 @@ public class Cercle {
 		Cercle c =(Cercle) o ;
 	    return (this.centre.equals(c.getCentre()))&&(this.rayon==c.getRayon());	
 	}
+	
+	public double surface() {
+		return pi*(java.lang.Math.sqrt(rayon));		
+	}
+	
+	public boolean contains(Point p) {
+		if(((java.lang.Math.sqrt(this.centre.getX()))-(java.lang.Math.sqrt(this.centre.getY()))<=rayon))
+			return true ;
+		return false;
+	}
+	
+	public boolean contains(Point p, Cercle c1, Cercle c2) {
+
+		return true;
+	}
+	
 	
 	public static void main( String[] args )
     {
