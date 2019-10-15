@@ -1,9 +1,9 @@
 package fr.dauphine.ja.henouneasma.shapes;
 
 public class Cercle {
-	private int rayon;
-	private Point centre;
-	private static double pi=3.14;
+	protected int rayon;
+	protected Point centre;
+	protected static double pi=3.14;
 	
 	public Cercle(int rayon, Point p) {
 		this.rayon = rayon; //Rayon du cercle
@@ -41,7 +41,7 @@ public class Cercle {
 	}
 	
 	public double surface() {
-		return pi*(java.lang.Math.sqrt(rayon));		
+		return Math.PI*rayon*rayon;		
 	}
 	
 	public boolean contains(Point p) {
@@ -50,9 +50,12 @@ public class Cercle {
 		return false;
 	}
 	
-	public boolean contains(Point p, Cercle c1, Cercle c2) {
-
-		return true;
+	public boolean contains(Point p,Cercle[] tableau) {
+		
+		for(Cercle c : tableau)
+			 if(c.contains(p))
+				 return true;
+		return false;
 	}
 	
 	
