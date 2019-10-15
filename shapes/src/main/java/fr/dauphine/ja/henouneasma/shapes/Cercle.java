@@ -26,21 +26,18 @@ public class Cercle {
 	}
 	// translater un cerlce
 	public void translate(int dx,int dy) {
+		this.centre.translate(dx,dy);
+		this.rayon=0;
 		
 	}
 	
 	@Override
 	// redéfinition de equals
-	public boolean equals(Circle A){
-		if (centre.getX() = A.getCentre().getX()){
-			if (centre.getY() = A.getCentre().getY(){
-				if (rayon = A.getRayon() ){
-					return true;
-				}
-			}
-		}
-		return false;
-	} 
+	public boolean equals(Object o) {
+		if(!(o instanceof Cercle)) return false;
+		Cercle c =(Cercle) o ;
+	    return (this.centre.equals(c.getCentre()))&&(this.rayon==c.getRayon());	
+	}
 	
 	public static void main( String[] args )
     {
@@ -51,6 +48,7 @@ public class Cercle {
 		Cercle c2 = new Cercle(2,p);
 		c2.translate(1,1);
 		System.out.println(c1+","+c2);
+		System.out.println(c1.equals(c2));
 	}
 
 }
