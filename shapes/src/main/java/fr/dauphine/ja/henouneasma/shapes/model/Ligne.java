@@ -1,28 +1,22 @@
-package fr.dauphine.ja.henouneasma.shapes;
+package fr.dauphine.ja.henouneasma.shapes.model;
 
 import java.util.*;
 
 
-public class Ligne {
+public class Ligne implements Shape{
         
         private Point tableau[];
         private  int  maxPoints;
         private static int n=0;
+        LinkedList <Point> list;
 
-        public Ligne(int maxPoints){
+        public Ligne(/*int maxPoints*/){
         	LinkedList <Point> list = new LinkedList<Point>() ; 
              // tableau = new Point[maxPoints] ;
                             
         }     
-        
-        public void add(Point p) {
-
-        	Objects.requireNonNull(p,"Le point ne peut pas etre null");
-        	if(n<=maxPoints) {
-	        	tableau[n]= new Point(p);
-	        	n++;
-        	}
-        }
+       
+      
         
         public int pointCapacity(Ligne l) {
         	return l.maxPoints;
@@ -37,17 +31,27 @@ public class Ligne {
         	for (Point p2 : tableau) 
         		if(p.equals(p2)) return true; 
         	return false;
-        	
         }
      // main 
 	    public static void main( String[] args )
 	    {
 	    	// exercice 2.3
+	    	LinkedList <Point> list = new LinkedList<Point>() ; 
 	    	Point p1=new Point(1,2);
-	    	Ligne l = new Ligne(2);
-	    	l.add(p1);	  
-	    	System.out.println(l.contains(p1));   	
+	    	list.push(p1);	  
+	    	System.out.println(list.contains(p1));   	
 	    }
+	    public void addPoints(Point p) {
+	    	list.push(p);
+	    	
+	    	
+	    }
+
+	  
+
+	
+
+
 
 }
 		

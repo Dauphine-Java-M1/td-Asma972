@@ -1,4 +1,4 @@
-package fr.dauphine.ja.henouneasma.shapes;
+package fr.dauphine.ja.henouneasma.shapes.model;
 
 public class TestPoint {
 	

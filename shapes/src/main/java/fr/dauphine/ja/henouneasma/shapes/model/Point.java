@@ -1,9 +1,9 @@
-package fr.dauphine.ja.henouneasma.shapes;
+package fr.dauphine.ja.henouneasma.shapes.model;
 
 import java.util.*;
 
 
-public class Point {
+public class Point implements Shape{
 		
 	    private int x,y; // champs privé  
 	    private static  int nbPoints; // ce champs n'interfére pas à la création d'un point 
@@ -83,6 +83,7 @@ public class Point {
 			return "("+x+","+y+")";
 		}
 		
+
 		// main 
 	    public static void main( String[] args )
 	    {

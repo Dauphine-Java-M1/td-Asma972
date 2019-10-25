@@ -1,4 +1,4 @@
-package fr.dauphine.ja.henouneasma.shapes;
+package fr.dauphine.ja.henouneasma.shapes.model;
 
 public class Ring extends Cercle{
 	
@@ -13,6 +13,10 @@ public class Ring extends Cercle{
 	
 	public int getRayonInterne() {
 		return rayonInterne;
+	}
+	public Cercle getCercle() {
+		Cercle c= new Cercle(super.getRayon(),super.getCentre());
+		return c ;
 	}
 
 	
@@ -31,20 +35,19 @@ public class Ring extends Cercle{
 	
 	@Override
 	public String toString() {
-		String res="un ring est un cercle :"+cercle+", un rayon "+rayon+", un rayon inetrne :"+rayonInterne;
+		String res="un ring est un cercle :"+getCercle()+", un rayon "+super.rayon+", un rayon inetrne :"+rayonInterne;
 		return res;
 	}
 	
-	public boolean contains(Point p) {
-		return (p.contains(this.cercle));
-	}
+	//public boolean contains(Point p) {
+		//return (p.contains(this.getCercle()));
+	//}
 	
 	
 	public static void main( String[] args )
     {
 		Point p = new Point(1,1); 
-		Cercle c = new Cercle(1,p);
-		Ring r = new Ring(c,2,1);
+		Ring r = new Ring(p, 1, 5);
 		System.out.println(r);
 	}
 }

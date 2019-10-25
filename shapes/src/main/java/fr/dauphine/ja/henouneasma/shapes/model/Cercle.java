@@ -1,13 +1,18 @@
-package fr.dauphine.ja.henouneasma.shapes;
+package fr.dauphine.ja.henouneasma.shapes.model;
 
-public class Cercle {
+import fr.dauphine.ja.henouneasma.shapes.view.CircleDrower;
+import fr.dauphine.ja.henouneasma.shapes.view.Drower;
+
+public class Cercle implements Shape {
 	protected int rayon;
 	protected Point centre;
 	protected static double pi=3.14;
+	public Drower d;
 	
 	public Cercle(int rayon, Point p) {
 		this.rayon = rayon; //Rayon du cercle
 		this.centre = new Point(p); //les coordonnée du centre
+		d = new CircleDrower();
 	}
 	
 	public int getRayon() {
@@ -61,14 +66,9 @@ public class Cercle {
 	
 	public static void main( String[] args )
     {
-		Cercle c = new Cercle(1, new Point(1,2));
-		c.getCentre().translate(1,1);
-		Point  p  =	new Point(1,2);
-		Cercle c1 = new Cercle(1,p);
-		Cercle c2 = new Cercle(2,p);
-		c2.translate(1,1);
-		System.out.println(c1+","+c2);
-		System.out.println(c1.equals(c2));
+		
 	}
+
+
 
 }
