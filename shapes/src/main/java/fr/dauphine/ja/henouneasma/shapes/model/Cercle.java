@@ -3,16 +3,18 @@ package fr.dauphine.ja.henouneasma.shapes.model;
 import fr.dauphine.ja.henouneasma.shapes.view.CircleDrower;
 import fr.dauphine.ja.henouneasma.shapes.view.Drower;
 
-public class Cercle implements Shape {
+public class Cercle extends Shape {
 	protected int rayon;
 	protected Point centre;
 	protected static double pi=3.14;
-	public Drower d;
+	private static Drower d1;
+
 	
 	public Cercle(int rayon, Point p) {
+		super(d1);
 		this.rayon = rayon; //Rayon du cercle
-		this.centre = new Point(p); //les coordonnÃ©e du centre
-		d = new CircleDrower();
+		this.centre = new Point(p); //les coordonnée du centre
+		d1 = new CircleDrower();
 	}
 	
 	public int getRayon() {
@@ -24,7 +26,7 @@ public class Cercle implements Shape {
 	}
 	
 	@Override
-	//redÃ©finition de la mÃ©thode toString
+	//redéfinition de la méthode toString
 	
 	public String toString() {
 		String res = " rayon= " +this.rayon+" le centre : ("+centre.getX()+","+centre.getY()+") et sa surface est :"+this.surface() ;
@@ -33,12 +35,12 @@ public class Cercle implements Shape {
 	// translater un cerlce
 	public void translate(int dx,int dy) {
 		this.centre.translate(dx,dy);
-		this.rayon=0;// pour le moment je ne sais pas comment faire Ã§a 
+		this.rayon=0;// pour le moment je ne sais pas comment faire ça 
 		
 	}
 	
 	@Override
-	// redÃ©finition de equals
+	// redéfinition de equals
 	public boolean equals(Object o) {
 		if(!(o instanceof Cercle)) return false;
 		Cercle c =(Cercle) o ;
@@ -63,11 +65,6 @@ public class Cercle implements Shape {
 		return false;
 	}
 	
-	
-	public static void main( String[] args )
-    {
-		
-	}
 
 
 

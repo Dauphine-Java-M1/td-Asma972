@@ -2,15 +2,19 @@ package fr.dauphine.ja.henouneasma.shapes.model;
 
 import java.util.*;
 
+import fr.dauphine.ja.henouneasma.shapes.view.Drower;
 
-public class Ligne implements Shape{
+
+public class Ligne extends Shape{
         
         private Point tableau[];
         private  int  maxPoints;
         private static int n=0;
+		private static Drower d;
         LinkedList <Point> list;
 
         public Ligne(/*int maxPoints*/){
+        	super(d);
         	LinkedList <Point> list = new LinkedList<Point>() ; 
              // tableau = new Point[maxPoints] ;
                             
@@ -47,9 +51,10 @@ public class Ligne implements Shape{
 	    	
 	    }
 
-	  
+
 
 	
+
 
 
 

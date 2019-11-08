@@ -3,11 +3,11 @@ package fr.dauphine.ja.henouneasma.shapes.model;
 import java.util.*;
 
 
-public class Point implements Shape{
+public class Point {
 		
-	    private int x,y; // champs privÃ©  
-	    private static  int nbPoints; // ce champs n'interfÃ©re pas Ã  la crÃ©ation d'un point 
-	    private int maxPoints; //nombres de points pour une ligne brisÃ© 
+	    private int x,y; // champs privé  
+	    private static  int nbPoints; // ce champs n'interfére pas à la création d'un point 
+	    private int maxPoints; //nombres de points pour une ligne brisé 
 	    
 		public Point(int x, int y) {
 			this.x = x;
@@ -15,12 +15,12 @@ public class Point implements Shape{
 			this.nbPoints += 1;
 		}
 		
-		// constructeur d'un point vide, par dÃ©faut 
+		// constructeur d'un point vide, par défaut 
 		public Point() {
 			
 		}
 		
-		// ce constructeur permet de crÃ©er un point de coordonnÃ©e x et y 
+		// ce constructeur permet de créer un point de coordonnée x et y 
 		public Point(Point p) {
 			this.x = p.x;
 			this.y = p.y;
@@ -30,22 +30,22 @@ public class Point implements Shape{
 	    
 	
 	    
-	    // mÃ©thode de classe permettant de changer la valeur de x d'un point
+	    // méthode de classe permettant de changer la valeur de x d'un point
 		public void setX(int p) {
 			x = p;
 		}
 	
-	    // mÃ©thode de classe permettant de changer la valeur de y d'un point
+	    // méthode de classe permettant de changer la valeur de y d'un point
 		public void setY(int p) {
 			y = p;
 		}
 		
-		// mÃ©thode de classe permettant de rÃ©cupÃ©rer la valeur de x d'un point
+		// méthode de classe permettant de récupérer la valeur de x d'un point
 		public int getX() {
 			return x;
 		}
 		
-		// mÃ©thode de classe permettant de rÃ©cupÃ©rer la valeur de y d'un point
+		// méthode de classe permettant de récupérer la valeur de y d'un point
 		public int getY() {
 			return y;
 		}
@@ -56,7 +56,7 @@ public class Point implements Shape{
 			return false;
 		}
 		
-		// redÃ©finir la fonction equals 
+		// redéfinir la fonction equals 
 		@Override 
 		
 		public boolean equals(Object o) {
@@ -65,14 +65,14 @@ public class Point implements Shape{
 			Point p = (Point) o;
 			return (x==p.x)&&(y==p.y);		
 		}
-		// signature 1 ou on modifie les paramÃ©tre du point
+		// signature 1 ou on modifie les paramétre du point
 		
 		public void translate (int dx, int dy ) {
 			this.x = dx;
 			this.y = dy;
 		}
 		
-		// signature 2 ou on crÃ©Ã© un nouveau point
+		// signature 2 ou on créé un nouveau point
 		public Point translate2(int dx,int dy) {
 			Point p = new Point(dx, dy);
 			return p;
@@ -102,7 +102,7 @@ public class Point implements Shape{
 	     	Point d = new Point(p);
 	    	System.out.println("("+p.x+","+p.y+")");
 	    	System.out.println("("+d.x+","+d.y+")");
-	    	System.out.println("Le nombre de points crÃ©Ã©r jusqu'a maintenant :" + nbPoints);
+	    	System.out.println("Le nombre de points créér jusqu'a maintenant :" + nbPoints);
 	    	
 	    	// exercice 2.3
 	    	System.out.println("Question 2.3");
@@ -116,5 +116,7 @@ public class Point implements Shape{
 	    	p11.toString();
 	   
 	    }
+
+	
 
 }
