@@ -1,11 +1,11 @@
 package fr.dauphine.ja.henouneasma.shapes.view;
 
-import java.awt.*;
+import java.awt.Graphics;
 
 import fr.dauphine.ja.henouneasma.shapes.model.Cercle;
 ;
 
-public class CircleDrower implements Drower{
+public class CircleDrower extends Drower{
 	public Cercle cercle;
 	
 	public CircleDrower(Cercle cercle) {
@@ -13,7 +13,7 @@ public class CircleDrower implements Drower{
 	}
 	
 	public void draw(Graphics g) {
-	       g.drawOval(50,50, 50, 50);
+		g.drawOval(cercle.getCentre().getX(),cercle.getCentre().getY(),cercle.getRayon(), cercle.getRayon());
 	}
 
 }

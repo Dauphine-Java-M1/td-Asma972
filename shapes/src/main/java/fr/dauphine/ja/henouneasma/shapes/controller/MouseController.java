@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import fr.dauphine.ja.henouneasma.shapes.model.Cercle;
 import fr.dauphine.ja.henouneasma.shapes.model.Point;
 import fr.dauphine.ja.henouneasma.shapes.model.World;
-import fr.dauphine.ja.henouneasma.shapes.view.MyDisplay;
+import fr.dauphine.ja.henouneasma.shapes.model.Shape;
 
 public class MouseController implements MouseMotionListener {
 
@@ -51,13 +51,22 @@ public class MouseController implements MouseMotionListener {
 		// TODO Auto-generated method stub
 		
 	}
-	public void mouseDragged(MouseEvent arg0) {
+	public void mouseDragged(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		Point p = new Point(e.getX(), e.getY());
+		int i = 0;
+		for (Shape s : monde.getShapes()) {
+			if (s.contains(p)) {
+				monde.getShapes().get(i).translate(e.getX(), e.getY());
+				frame.repaint();
+				return;
+			}
+			i++;
+		}
 	}
-	public void mouseMoved(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseMoved(MouseEvent e) {
+		monde.getShapes().get(monde.getShapes().size()-1).translate(e.getX(), e.getY());
+		frame.repaint();
 	}
 
 }

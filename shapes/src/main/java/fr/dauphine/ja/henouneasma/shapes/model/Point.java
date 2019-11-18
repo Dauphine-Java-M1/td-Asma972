@@ -14,16 +14,12 @@ public class Point {
 			this.y = y;
 			this.nbPoints += 1;
 		}
-		
-		// constructeur d'un point vide, par défaut 
-		public Point() {
-			
-		}
-		
+	
 		// ce constructeur permet de créer un point de coordonnée x et y 
 		public Point(Point p) {
-			this.x = p.x;
-			this.y = p.y;
+			this.x=p.x;
+			this.y=p.y;
+			this.nbPoints+=1;
 			
 		}
 	    

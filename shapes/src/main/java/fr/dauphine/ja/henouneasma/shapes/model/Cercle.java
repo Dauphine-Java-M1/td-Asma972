@@ -5,16 +5,15 @@ import fr.dauphine.ja.henouneasma.shapes.view.Drower;
 
 public class Cercle extends Shape {
 	protected int rayon;
-	protected Point centre;
+	private Point centre;
 	protected static double pi=3.14;
-	private static Drower d1;
 
 	
 	public Cercle(int rayon, Point p) {
-		super(d1);
+		super();
 		this.rayon = rayon; //Rayon du cercle
-		this.centre = new Point(p); //les coordonnée du centre
-		d1 = new CircleDrower();
+		this.centre = p; //les coordonnée du centre
+		super.d = new CircleDrower(this);
 	}
 	
 	public int getRayon() {
@@ -35,7 +34,7 @@ public class Cercle extends Shape {
 	// translater un cerlce
 	public void translate(int dx,int dy) {
 		this.centre.translate(dx,dy);
-		this.rayon=0;// pour le moment je ne sais pas comment faire ça 
+		this.rayon=0; 
 		
 	}
 	
@@ -64,6 +63,8 @@ public class Cercle extends Shape {
 				 return true;
 		return false;
 	}
+
+
 	
 
 

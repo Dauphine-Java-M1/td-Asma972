@@ -2,6 +2,6 @@ package fr.dauphine.ja.henouneasma.shapes.view;
 
 import java.awt.Graphics;
 
-public interface Drower {
-	public void draw(Graphics g);
+public abstract class Drower {
+	public abstract void draw(Graphics g);
 }

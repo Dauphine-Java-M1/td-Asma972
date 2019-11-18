@@ -1,15 +1,17 @@
 package fr.dauphine.ja.henouneasma.shapes.view;
-
 import javax.swing.*;
 
 import fr.dauphine.ja.henouneasma.shapes.controller.MouseController;
 import fr.dauphine.ja.henouneasma.shapes.model.Cercle;
-import fr.dauphine.ja.henouneasma.shapes.model.Ligne;
 import fr.dauphine.ja.henouneasma.shapes.model.Point;
 import fr.dauphine.ja.henouneasma.shapes.model.World;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-import java.awt.*;
-import java.util.*;
+import fr.dauphine.ja.henouneasma.shapes.model.Shape;
 
 public class MyDisplay extends JPanel{
 	
@@ -17,25 +19,27 @@ public class MyDisplay extends JPanel{
 	public MyDisplay(World monde){
 		this.monde = monde;
 	}
-	@Override
-	public  void paintComponent(Graphics g) {
-        //g.drawLine(50, 50, 200, 300);
-        //Cercle c = new Cercle(1, new Point(1,2));
-		//d.draw(g);
-    }
-	public static void main(String []args){
-		World monde = new World();
-		JFrame frame = new JFrame("Java y");
-		frame.setSize(new Dimension(500,500));
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		MyDisplay d = new MyDisplay(monde);
-		frame.add(d);
-		//c.repaint();
-		MouseController m = new MouseController(monde, frame) ; 
-		monde.getShapes();
+	
+	
+	
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.setColor(Color.black);
+		g.fillRect(1, 1, this.getWidth(), this.getHeight());
+		g.setColor(Color.white);
+		for (Shape s : monde.getShapes()) {
+			s.d.draw(g);
 		}
-
+	}
+	
+	public static void main(String []args){
+		JFrame frame = new JFrame("Java Avancé - Graphic Display");
+		World monde = new World();
+		MyDisplay d = new MyDisplay(monde);
+		MouseController m = new MouseController(monde, frame);
+		frame.add(d);
+		frame.addMouseMotionListener(m);
+		frame.setSize(new Dimension(500, 500));
+		frame.setVisible(true);
+	}
 }
