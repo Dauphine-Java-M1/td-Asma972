@@ -2,3 +2,8 @@ Exercice 1
 
 Q4 : le but de iterable etant de parcourir des objets, c'est pour cela que si on veut qu'il nous donne par exepmle getSize()
  il faut qu'on l'implemente comme une List, et vu qu'on a aps envie de réimplementer toutes les méthodes de List, il suffit d'utiliser AbstractList() où la il faudra juste redéfinir deux méthode size(); et get()
+
+Exercice 2 :
+ Q3 : le problème avec le code suivant c'est qu'il y a une différence entre l'utilisation des différentes type de liste en temps d'executions
+ 	dans le cas d'une arraylist on a 41186700 nanos
+	et dans le cas d"une LinkedList(liste chainé) on obtient 54940300 nano seconds 
