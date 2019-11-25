@@ -7,3 +7,11 @@ Exercice 2 :
  Q3 : le problème avec le code suivant c'est qu'il y a une différence entre l'utilisation des différentes type de liste en temps d'executions
  	dans le cas d'une arraylist on a 41186700 nanos
 	et dans le cas d"une LinkedList(liste chainé) on obtient 54940300 nano seconds 
+
+diff entre abstractList on implement get et size
+abstractSquetialList on implement la liste avec l'iterateur on a plus besoin d'implementer get et size dans ce cas la onn redéfinit tout fois l'iterateur 
+
+iterateur next() et hasNext()
+listIterateur il faudra redéfinir les méthodes :  next() et previous() hasNext() et hasPrevious()
+ 
+ajouter => throw new UnsupportedOperationException();

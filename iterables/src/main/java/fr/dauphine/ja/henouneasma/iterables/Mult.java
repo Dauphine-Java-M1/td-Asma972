@@ -1,15 +1,17 @@
 package fr.dauphine.ja.henouneasma.iterables;
 
 import java.util.AbstractList;
+import java.util.AbstractSequentialList;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Mult {
 	
 	
-	
+	// abract
     public static List<Integer> mult( final Integer entier, final List<Integer> list) {
 		// TODO Auto-generated method stub
 		return new AbstractList<Integer>() {
@@ -29,6 +31,84 @@ public class Mult {
 		};
 }
 	 
+    
+    // méthode avec abstractSquentialList 
+    
+    public static List<Integer> mult2( final Integer entier, final List<Integer> list) {
+    	return new AbstractSequentialList<Integer>(){
+    		
+
+			@Override
+			public ListIterator listIterator(final int arg0) {
+				// TODO Auto-generated method stub
+				 return new ListIterator<Integer>() {
+					 private ListIterator<Integer> myList= list.listIterator(arg0);
+
+					@Override
+					public void add(Integer e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public boolean hasNext() {
+						// TODO Auto-generated method stub
+						return myList.hasNext();
+					}
+
+					@Override
+					public boolean hasPrevious() {
+						// TODO Auto-generated method stub
+						return myList.hasPrevious() ;
+					}
+
+					@Override
+					public Integer next() {
+						// TODO Auto-generated method stub
+						return entier*myList.next();
+					}
+
+					@Override
+					public int nextIndex() {
+						// TODO Auto-generated method stub
+						return myList.nextIndex()*entier;
+					}
+
+					@Override
+					public Integer previous() {
+						// TODO Auto-generated method stub
+						return myList.previous();
+					}
+
+					@Override
+					public int previousIndex() {
+						// TODO Auto-generated method stub
+						return myList.previousIndex();
+					}
+
+					@Override
+					public void remove() {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void set(Integer e) {
+						// TODO Auto-generated method stub
+						
+					}
+				};
+			}
+
+			@Override
+			public int size() {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+    		
+    		
+    	};
+    }
 	 // Premiere question 
 	// private  static ArrayList<Integer>  mult(int entier, ArrayList<Integer> list) {
 	//	 int prod;
@@ -54,7 +134,7 @@ public class Mult {
     
 	 public static void main(String []args){
 	    	// Panel 1
-	    	ArrayList<Integer> list = new ArrayList<Integer>();
+	    	List<Integer> list = new ArrayList<Integer>();
 	    	list.add(5);
 	    	list.add(4);
 	    	list.add(3);
@@ -64,6 +144,7 @@ public class Mult {
 	    	
 	    	System.out.println("Voici la list : "+list);
 	    	System.out.println("La list après multiplication :"+mult(5,list));
+	    	System.out.println("La list après multiplication :"+mult2(5,list));
 	    	
 	    	ArrayList<Integer> al = new ArrayList<Integer>();
 	    	
