@@ -1,8 +1,13 @@
 package fr.dauphine.ja.henouneasma.generics;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class generics<T> implements Comparable<T> {
+import javax.sound.midi.Sequence;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class generics  {
 	
 	// on compare avec la premiére valeur du tableau integers qui de type integer []	
 	public static int myMax2(int i0,Integer...integers) {
@@ -26,19 +31,33 @@ public class generics<T> implements Comparable<T> {
 		}
 		return max;
 	}
+
+	
+	private static  void print(List<?> list) {
+		for(Object o:list)
+		System.out.println(o);
+	}
+	
+	private static void  longueur(List<? extends CharSequence> list) {
+		ArrayList<Integer> l=new ArrayList<Integer>();
+		for(CharSequence o:list) {
+			l.add(o.length());
+		}
+		print(l);
+	}
+	
 	
 	public static void main(String []args){
 		System.out.println(myMax(42,1664)); //1664
 		System.out.println(myMax(2014,86,13)); //2014
 		System.out.println(myMax(8.6,16.64)); //16.64
 		System.out.println(myMax("baa", "aba")); //aba
+		//exercice 2
+		List<String> list=Arrays.asList("foo", "toto","toto2");
+		//List<?> list2=Arrays.asList(2,3,4,"toto");
+		print(list);
+		longueur(list);
+		//print(list);// Q1 list de string ne sont pas des sous-types de objects 
 	}
-	public int compareTo(T o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	
 	
 }
