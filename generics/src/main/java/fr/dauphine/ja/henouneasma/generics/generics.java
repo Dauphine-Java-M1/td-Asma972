@@ -47,6 +47,9 @@ public class generics  {
 	}
 	
 	
+	
+	
+	
 	public static void main(String []args){
 		System.out.println(myMax(42,1664)); //1664
 		System.out.println(myMax(2014,86,13)); //2014
@@ -61,3 +64,6 @@ public class generics  {
 	}
 	
 }
+
+
+//wildcard // thread
